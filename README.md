@@ -15,6 +15,7 @@ optional arguments:
   -pp PROXY_PORT, --proxy_port PROXY_PORT
                         The proxy port in format {8080}.
   -c [COOKIE]           LinkedIn li_at session cookie. [AQEDAR1hbLMFawzeAAABd5bk........CQBPcCMRrTC5t55shATUJv]
+  -m                    If multiple first names exist, it will generate an email for each first name (e.g. john.smith@test.com and dan.smith@test.com).
   -fi                   Save first name as first initial.
   -li                   Save last name as last initial.
   -f                    Save first name.
