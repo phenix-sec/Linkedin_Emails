@@ -2,11 +2,9 @@
 
 This script will scrape LinkedIn based on company IDs and will return names and emails.
 
-## linkedin_email_scraper.py usage:
+## linkedin_emails.py usage:
 ```
-usage: browser_dev_linkedin.py [-h] [-p PROXY] [-pp PROXY_PORT] [-c [COOKIE]] [-fi] [-li] [-f] [-l] [-m] [-e [EMAIL]] [-d [DELIMITER]] [-i [COMPANY_ID]] [-o [LOG_FILE]]
-
-Selenium LinkedIn Scraper >:D
+usage: linkedin_emails.py [-h] [-p PROXY] [-pp PROXY_PORT] [-c [COOKIE]] [-fi] [-li] [-f] [-l] [-m] [-e [EMAIL]] [-d [DELIMITER]] [-i [COMPANY_ID]] [-o [LOG_FILE]]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -27,15 +25,15 @@ optional arguments:
 ```
    Basic usage of script:
    
-    python3 linkedin_email_scraper.py -d " " -i 123456 -c AQEDAR1hbLMFawzeAAABd5bk........CQBPcCMRrTC5t55shATUJv
+    python3 linkedin_emails.py -d " " -i 123456 -c AQEDAR1hbLMFawzeAAABd5bk........CQBPcCMRrTC5t55shATUJv
     
    Hardcoded li_at cookie [line 35] in script:
    
-    python3 linkedin_email_scraper.py -i 123456
+    python3 linkedin_emails.py -i 123456
     
-   Advanced usage of linkedin_email_scraper.py:
+   Advanced usage of linkedin_emails.py:
    
-    $ python3 linkedin_email_scraper.py -p 127.0.0.1 -pp 8080 -d "." -e microsoft.com -fi -l -m -o microsoft.txt
+    $ python3 linkedin_emails.py -p 127.0.0.1 -pp 8080 -d "." -e microsoft.com -fi -l -m -o microsoft.txt
     [+] Scraping page 1 Good:12 Bad:1
     [+] Scraping page 2 Good:21 Bad:1
     [+] Scraping page 3 Good:28 Bad:3
