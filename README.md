@@ -11,9 +11,9 @@ Selenium LinkedIn Scraper >:D
 optional arguments:
   -h, --help            show this help message and exit
   -p PROXY, --proxy PROXY
-                        The proxy ip in format {10.0.0.1}.
+                        The proxy ip in format {127.0.0.1}.
   -pp PROXY_PORT, --proxy_port PROXY_PORT
-                        The proxy port in format {1080}.
+                        The proxy port in format {8080}.
   -c [COOKIE]           LinkedIn li_at session cookie. [AQEDAR1hbLMFawzeAAABd5bk........CQBPcCMRrTC5t55shATUJv]
   -fi                   Save first name as first initial.
   -li                   Save last name as last initial.
@@ -34,7 +34,7 @@ optional arguments:
     
    Advanced usage of linkedin_email_scraper.py:
    
-    $ python3 linkedin_email_scraper.py -p 5 -d "." -e microsoft.com -fi -l -o microsoft.txt
+    $ python3 linkedin_email_scraper.py -p 127.0.0.1 -pp 8080 -d "." -e microsoft.com -fi -l -o microsoft.txt
     [+] Scraping page 1 Good:12 Bad:1
     [+] Scraping page 2 Good:21 Bad:1
     [+] Scraping page 3 Good:28 Bad:3
