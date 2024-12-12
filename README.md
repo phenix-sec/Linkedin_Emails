@@ -1,5 +1,7 @@
 # LinkedIn Username/Email scrapper
 
+This script will scrape LinkedIn based on company IDs and will return names and emails.
+
 ## linkedin_email_scraper.py usage:
 ```
 usage: browser_dev_linkedin.py [-h] [-p PROXY] [-pp PROXY_PORT] [-c [COOKIE]] [-fi] [-li] [-f] [-l] [-e [EMAIL]] [-d [DELIMITER]] [-i [COMPANY_ID]] [-o [LOG_FILE]]
