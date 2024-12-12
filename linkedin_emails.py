@@ -20,10 +20,12 @@ def argparser():
     cookie = '' #hardcode me
 
     parser = argparse.ArgumentParser(description="Selenium LinkedIn Scraper >:D")
-    parser.add_argument("-p", "--proxy", help="The proxy ip in format {10.0.0.1}.", default='127.0.0.1')
-    parser.add_argument("-pp", "--proxy_port", help="The proxy port in format {1080}.", default='1080')
+    parser.add_argument("-p", "--proxy", help="The proxy ip in format {127.0.0.1}.", default='127.0.0.1')
+    parser.add_argument("-pp", "--proxy_port", help="The proxy port in format {8080}.", default='8080')
     parser.add_argument('-c', action='store', dest='cookie', nargs='?', default=cookie, const=cookie,
                         help='LinkedIn li_at session cookie. [AQEDAR1hbLMFawzeAAABd5bk........CQBPcCMRrTC5t55shATUJv]')
+    parser.add_argument('-m', action='store_true', dest='multiple',
+                        help='If multiple first names exist, it will generate an email for each first name (e.g. john.smith@test.com and dan.smith@test.com).')
     parser.add_argument('-fi', action='store_true', dest='first_initial',
                         help='Save first name as first initial.')
     parser.add_argument('-li', action='store_true', dest='last_initial',
@@ -145,16 +147,16 @@ def log_names():
 
     for name in good:
         count_names = len(name.split(" "))
-        if count_names > 2:
-        old_name = name
-        name = name_format(name)
-        log_file.write(name); log_file.write('\n')
-        second_name = old_name.split(" ",1)[1]
-        second_name = name_format(second_name)
-        log_file.write(second_name); log_file.write('\n')
-    else:    
-        name = name_format(name)
-        print(name)
+        if count_names > 2 and args.multiple:
+            old_name = name
+            name = name_format(name)
+            log_file.write(name); log_file.write('\n')
+            second_name = old_name.split(" ",1)[1]
+            second_name = name_format(second_name)
+            log_file.write(second_name); log_file.write('\n')
+        else:    
+            name = name_format(name)
+            log_file.write(name); log_file.write('\n')
 
 
     print('[-] Names to fix [Enter to skip] ctrl+c if UDGAF: '+str(len(bad)))
@@ -163,8 +165,19 @@ def log_names():
         if new_name == '':
             pass
         else:
-            new_name = name_format(new_name)
-            log_file.write(new_name); log_file.write('\n')
+            count_names = len(new_name.split(" "))
+            if count_names > 2  and args.multiple:
+                old_name = new_name
+                new_name = name_format(new_name)
+                log_file.write(new_name); log_file.write('\n')
+                second_name = old_name.split(" ",1)[1]
+                second_name = name_format(second_name)
+                log_file.write(second_name); log_file.write('\n')
+            else:    
+                new_name = name_format(new_name)
+                log_file.write(new_name); log_file.write('\n')
+
+
     log_file2 = open("names_" + args.log_file, 'w')
     log_file2.write("\n".join(good)); log_file2.write('\n')
     log_file2.write("\n".join(bad)); log_file2.write('\n')
