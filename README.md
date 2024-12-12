@@ -35,7 +35,7 @@ optional arguments:
     
    Advanced usage of linkedin_email_scraper.py:
    
-    $ python3 linkedin_email_scraper.py -p 127.0.0.1 -pp 8080 -d "." -e microsoft.com -fi -l -o microsoft.txt
+    $ python3 linkedin_email_scraper.py -p 127.0.0.1 -pp 8080 -d "." -e microsoft.com -fi -l -m -o microsoft.txt
     [+] Scraping page 1 Good:12 Bad:1
     [+] Scraping page 2 Good:21 Bad:1
     [+] Scraping page 3 Good:28 Bad:3
